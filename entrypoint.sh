@@ -10,13 +10,13 @@ export INTERNAL_IP=$(ip route get 1 | awk '{print $NF;exit}')
 
 # Check if already installed
 if [ ! -e "$HOME/.installed" ]; then
-    ${ROOTFS_DIR}/usr/local/bin/proot \
+    ${HOME}/usr/local/bin/proot \
     --rootfs="/" \
     -0 -w "/root" \
     -b /dev -b /sys -b /proc -b /etc/resolv.conf \
     --kill-on-exit \
-    /bin/bash "${ROOTFS_DIR}/install.sh" || exit 1
+    /bin/bash "${HOME}/install.sh" || exit 1
 fi
 
 # Run the startup helper script
-bash ${ROOTFS_DIR}/helper.sh
+bash ${HOME}/helper.sh
