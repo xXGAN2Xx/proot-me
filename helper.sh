@@ -40,7 +40,7 @@ parse_ports() {
 exec_proot() {
     local port_args=$(parse_ports)
     
-    /usr/local/bin/proot \
+    ${ROOTFS_DIR}/usr/local/bin/proot \
     --rootfs="${HOME}" \
     -0 -w "${HOME}" \
     -b /dev -b /sys -b /proc -b /etc/resolv.conf \
