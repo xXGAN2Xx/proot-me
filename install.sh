@@ -299,7 +299,6 @@ post_install_config() {
 
 # Main menu display
 display_menu() {
-    printf "\033c"
     printf "${colors[GREEN]}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${colors[NC]}\n"
     printf "${colors[GREEN]}┃                                                                             ┃${colors[NC]}\n"
     printf "${colors[GREEN]}┃                           ${colors[PURPLE]} Pterodactyl VPS EGG ${colors[GREEN]}                             ┃${colors[NC]}\n"
