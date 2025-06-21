@@ -261,7 +261,6 @@ restore_backup() {
 
 # Function to print initial banner
 print_banner() {
-    printf "\033c"
     printf "${GREEN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}\n"
     printf "${GREEN}┃                                                                             ┃${NC}\n"
     printf "${GREEN}┃                           ${PURPLE}Done (s)! For help, type "help"${GREEN}  ┃${NC}\n" 
@@ -306,7 +305,7 @@ execute_command() {
             print_prompt "$user"
             return 0
         ;;
-        "exit")
+        "exit"|"stop")
             cleanup
         ;;
         "history")
@@ -321,7 +320,7 @@ execute_command() {
             reinstall
             exit 2
         ;;
-        "sudo"*|"su"*)
+        "sudo"|"su")
             log "ERROR" "You are already running as root." "$RED"
             print_prompt "$user"
             return 0
