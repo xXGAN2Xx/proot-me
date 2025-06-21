@@ -36,11 +36,6 @@ if [ ! -e "/autorun.sh" ]; then
     chmod +x /autorun.sh
 fi
 
-printf "\033c"
-printf "${GREEN}Starting..${NC}\n"
-sleep 1
-printf "\033c"
-
 # Logger function
 log() {
     level=$1
