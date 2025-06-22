@@ -12,7 +12,7 @@ export INTERNAL_IP=$(ip route get 1 | awk '{print $NF;exit}')
 if [ ! -e "$HOME/.installed" ]; then
     ${HOME}/usr/local/bin/proot \
     --rootfs="/" \
-    -0 -w "/root" \
+    -0 -l -w "/root" \
     -b /dev -b /sys -b /proc -b /etc/resolv.conf \
     --kill-on-exit \
     /bin/bash "${HOME}/install.sh" || exit 1
